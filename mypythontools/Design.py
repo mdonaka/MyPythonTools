@@ -6,10 +6,7 @@ __date__ = "2020/03/25"
 
 
 class Singleton(object):
-    @classmethod
-    def get_instance(cls, input):
+    def __new__(cls):
         if not hasattr(cls, "_instance"):
-            cls._instance = cls(input)
-        else:
-            cls._instance.input = input
+            cls._instance = super(Singleton, cls).__new__(cls)
         return cls._instance
