@@ -22,22 +22,21 @@ pipenv install git+https://github.com/mdonaka/MyPythonTools.git#egg=mypythontool
 from mypythontools.Design import Singleton
 
 # Singleton class 
-class A(Singleton):
-	pass
+class A(Singleton): ...
 
 # not Singleton class
-class B:
-	pass
+class B: ...
 ```
 
 ### Timer.stop_watch
-関数にデコレートするだけで処理時間を計測する．
+関数にデコレートするだけで処理時間を計測する．ログレベルは"DEBUG"としている．
 ```Python
+from logging import DEBUG, basicConfig
 from mypythontools.Timer import stop_watch
+basicConfig(level=DEBUG)
 
 @stop_watch
-def func():
-	pass
+def func(): ...
 
 func() #output: "DEBUG:[func_name] took [time] ms"
 ```
