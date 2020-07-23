@@ -28,6 +28,16 @@ class A(Singleton): ...
 class B: ...
 ```
 
+### Design.i
+iteratorをメソッドチェーンができるように拡張する．
+```Python
+from mypythontools.Design import i
+
+itr = i([1,2,3,4,5])
+newList = itr.map(lambda x:x+10).reverse().to_list()
+print(newList) #output: "[11, 12, 13, 14, 15]"
+```
+
 ### Timer.stop_watch
 関数にデコレートするだけで処理時間を計測する．ログレベルは"DEBUG"としている．
 ```Python
